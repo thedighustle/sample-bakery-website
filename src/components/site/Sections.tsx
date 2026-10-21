@@ -194,7 +194,7 @@ export function TestimonialGrid({ offset = false }: { offset?: boolean }) {
   return (
     <div className="grid gap-6 md:grid-cols-3">
       {TESTIMONIALS.map((t, i) => (
-        <Reveal key={t.name} delay={i * 120} className={cn(offset && i === 1 && "md:translate-y-8 md:[&.is-visible]:translate-y-8")}>
+        <Reveal key={t.name} delay={i * 120} className={cn(offset && i === 1 && "md:mt-8")}>
           <TestimonialCard {...t} />
         </Reveal>
       ))}
