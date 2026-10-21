@@ -16,12 +16,21 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        brand:
+          "bg-primary text-primary-foreground font-semibold tracking-[0.02em] rounded-[12px] shadow-rest transition-all duration-200 hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-raised active:translate-y-0 active:scale-[0.98] focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-espresso disabled:bg-border disabled:text-muted-foreground disabled:opacity-100",
+        brandOutline:
+          "border-2 border-espresso text-espresso bg-transparent font-semibold tracking-[0.02em] rounded-[12px] transition-all duration-200 hover:bg-espresso hover:text-linen active:scale-[0.98]",
+        onDark:
+          "bg-card text-espresso font-semibold tracking-[0.02em] rounded-[12px] transition-all duration-200 hover:bg-secondary hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-linen",
+        onDarkOutline:
+          "border-2 border-card text-card bg-transparent font-semibold tracking-[0.02em] rounded-[12px] transition-all duration-200 hover:bg-card hover:text-espresso active:scale-[0.98] focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-linen",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+        brand: "h-[52px] px-6 text-base [&_svg]:size-5",
       },
     },
     defaultVariants: {
