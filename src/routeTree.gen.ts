@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as MenuIndexRouteImport } from './routes/menu.index'
+import { Route as MenuCakesRouteImport } from './routes/menu.cakes'
+import { Route as MenuMuffinsRouteImport } from './routes/menu.muffins'
+import { Route as MenuOtherSweetTreatsRouteImport } from './routes/menu.other-sweet-treats'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestimonialsRoute = TestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuIndexRoute = MenuIndexRouteImport.update({
+  id: '/menu/',
+  path: '/menu/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuCakesRoute = MenuCakesRouteImport.update({
+  id: '/menu/cakes',
+  path: '/menu/cakes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuMuffinsRoute = MenuMuffinsRouteImport.update({
+  id: '/menu/muffins',
+  path: '/menu/muffins',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuOtherSweetTreatsRoute = MenuOtherSweetTreatsRouteImport.update({
+  id: '/menu/other-sweet-treats',
+  path: '/menu/other-sweet-treats',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/testimonials': typeof TestimonialsRoute
+  '/menu/cakes': typeof MenuCakesRoute
+  '/menu/muffins': typeof MenuMuffinsRoute
+  '/menu/other-sweet-treats': typeof MenuOtherSweetTreatsRoute
+  '/menu/': typeof MenuIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/testimonials': typeof TestimonialsRoute
+  '/menu/cakes': typeof MenuCakesRoute
+  '/menu/muffins': typeof MenuMuffinsRoute
+  '/menu/other-sweet-treats': typeof MenuOtherSweetTreatsRoute
+  '/menu': typeof MenuIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/testimonials': typeof TestimonialsRoute
+  '/menu/cakes': typeof MenuCakesRoute
+  '/menu/muffins': typeof MenuMuffinsRoute
+  '/menu/other-sweet-treats': typeof MenuOtherSweetTreatsRoute
+  '/menu/': typeof MenuIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/privacy'
+    | '/testimonials'
+    | '/menu/cakes'
+    | '/menu/muffins'
+    | '/menu/other-sweet-treats'
+    | '/menu/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/privacy'
+    | '/testimonials'
+    | '/menu/cakes'
+    | '/menu/muffins'
+    | '/menu/other-sweet-treats'
+    | '/menu'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/privacy'
+    | '/testimonials'
+    | '/menu/cakes'
+    | '/menu/muffins'
+    | '/menu/other-sweet-treats'
+    | '/menu/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  PrivacyRoute: typeof PrivacyRoute
+  TestimonialsRoute: typeof TestimonialsRoute
+  MenuCakesRoute: typeof MenuCakesRoute
+  MenuMuffinsRoute: typeof MenuMuffinsRoute
+  MenuOtherSweetTreatsRoute: typeof MenuOtherSweetTreatsRoute
+  MenuIndexRoute: typeof MenuIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/testimonials': {
+      id: '/testimonials'
+      path: '/testimonials'
+      fullPath: '/testimonials'
+      preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu/': {
+      id: '/menu/'
+      path: '/menu'
+      fullPath: '/menu/'
+      preLoaderRoute: typeof MenuIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu/cakes': {
+      id: '/menu/cakes'
+      path: '/menu/cakes'
+      fullPath: '/menu/cakes'
+      preLoaderRoute: typeof MenuCakesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu/muffins': {
+      id: '/menu/muffins'
+      path: '/menu/muffins'
+      fullPath: '/menu/muffins'
+      preLoaderRoute: typeof MenuMuffinsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu/other-sweet-treats': {
+      id: '/menu/other-sweet-treats'
+      path: '/menu/other-sweet-treats'
+      fullPath: '/menu/other-sweet-treats'
+      preLoaderRoute: typeof MenuOtherSweetTreatsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  PrivacyRoute: PrivacyRoute,
+  TestimonialsRoute: TestimonialsRoute,
+  MenuCakesRoute: MenuCakesRoute,
+  MenuMuffinsRoute: MenuMuffinsRoute,
+  MenuOtherSweetTreatsRoute: MenuOtherSweetTreatsRoute,
+  MenuIndexRoute: MenuIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
