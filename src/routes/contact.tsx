@@ -36,9 +36,9 @@ function InfoCard({ icon: Icon, label, children }: { icon: typeof Phone; label: 
 
 function QuoteForm() {
   const [v, setV] = useState({ name: "", phone: "", email: "", item: "", details: "", date: "" });
-  const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [touched, setTouched] = useState<Partial<Record<"name" | "phone" | "email" | "item", boolean>>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
-  const errors: Record<string, string> = {};
+  const errors: Partial<Record<"name" | "phone" | "email" | "item", string>> = {};
   if (!v.name.trim()) errors.name = "Please enter your name.";
   if (v.phone.replace(/\D/g, "").length < 7) errors.phone = "Please enter a valid phone number.";
   if (!/^\S+@\S+\.\S+$/.test(v.email)) errors.email = "Please enter a valid email.";
@@ -46,8 +46,8 @@ function QuoteForm() {
   const valid = Object.keys(errors).length === 0;
 
   const set = (k: keyof typeof v) => (e: { target: { value: string } }) => setV({ ...v, [k]: e.target.value });
-  const blur = (k: string) => () => setTouched({ ...touched, [k]: true });
-  const err = (k: string) =>
+  const blur = (k: "name" | "phone" | "email" | "item") => () => setTouched({ ...touched, [k]: true });
+  const err = (k: "name" | "phone" | "email" | "item") =>
     touched[k] && errors[k] ? (
       <p className="mt-1.5 flex items-center gap-1.5 text-sm text-destructive">
         <AlertCircle className="size-4" aria-hidden /> {errors[k]}
