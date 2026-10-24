@@ -269,13 +269,15 @@ function Footer() {
           <div>
             <h3 className="font-sans text-base font-semibold">Explore</h3>
             <ul className="mt-4 space-y-2 text-stone">
-              {[
-                ["/", "Home"],
-                ["/about", "About Us"],
-                ["/menu", "Menu"],
-                ["/testimonials", "Testimonials"],
-                ["/contact", "Contact"],
-              ].map(([to, l]) => (
+              {(
+                [
+                  ["/", "Home"],
+                  ["/about", "About Us"],
+                  ["/menu", "Menu"],
+                  ["/testimonials", "Testimonials"],
+                  ["/contact", "Contact"],
+                ] as const
+              ).map(([to, l]) => (
                 <li key={to}>
                   <Link to={to} className="hover:text-accent-light hover:underline">
                     {l}
