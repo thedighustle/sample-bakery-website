@@ -359,7 +359,6 @@ function MobileBar() {
 }
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
     <div className="flex min-h-screen flex-col pb-[76px] lg:pb-0">
       <a
@@ -370,7 +369,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       </a>
       <TopBar />
       <Header />
-      <main id="main" key={pathname} className="animate-page-in flex-1">
+      <main id="main" className="animate-page-in flex-1">
         {children}
       </main>
       <Footer />
